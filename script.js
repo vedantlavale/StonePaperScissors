@@ -33,28 +33,16 @@ function playGame(){
         else if((humanChoice==="rock"&&computerChoice==="scissors")||
                 (humanChoice==="scissors"&&computerChoice==="paper")||
                 (humanChoice==="paper"&&computerChoice==="rock")){
-                    console.log("Human Won");
+                    console.log(humanChoice+" won over "+computerChoice+" human gets a point");
                     humanScore++;
     } else{
-        console.log("Computer Won");
-        computerScore++;
+        console.log(computerChoice+" won over "+humanChoice+" computer gets a point");
+        computerScore++; 
         }
     }
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
-    let finalhumanscore = humanScore;
-let finalComputerscore = computerScore;
-console.log("Final Score: Human-"+finalhumanscore+", Computer-"+finalComputerscore);
-if(finalComputerscore===finalhumanscore){
-    console.log("It's a Tie");
-}
-else if(finalhumanscore>finalComputerscore){
-    console.log("Human Won the Game");
-    }
-    else{
-        console.log("Computer Won the Game");
-        }
 }
 for(let i=0;i<5;i++){
     playGame();
@@ -63,11 +51,11 @@ let finalhumanscore = humanScore;
 let finalComputerscore = computerScore;
 console.log("Final Score: Human-"+finalhumanscore+", Computer-"+finalComputerscore);
 if(finalComputerscore===finalhumanscore){
-    console.log("It's a Tie");
+    console.log("It's a Tie.Both will share the trophy");
 }
 else if(finalhumanscore>finalComputerscore){
-    console.log("Human Won the Game");
-    }
-    else{
-        console.log("Computer Won the Game");
-        }
+    console.log("Human won the game by "+(finalhumanscore-finalComputerscore)+" points.");
+}
+else{
+     console.log("Computer won the game by = "+(finalComputerscore-finalhumanscore)+" points");
+}
